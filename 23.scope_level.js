@@ -12,3 +12,14 @@ function first() {
 }
 
 first()
+
+
+if (true) {
+    const username = "Mohsin";
+    if (username === "Mohsin ") {
+        const hobby = "football";
+        console.log(username+hobby);
+    }
+    // console.log(hobby);          it will give error because parent can't access child variables
+}
+// console.log(username);              it will also give error because of scoping
