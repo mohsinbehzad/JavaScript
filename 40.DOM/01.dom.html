@@ -1,0 +1,45 @@
+<!-- run it in browser, then inspect then console -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+</head>
+
+<body>
+    <h1 id="heading">My Name is Mohsin <span style="display: none;">Behzad</span></h1>
+    <h2>I am learning MERN</h2>
+    <p class="test" id="unique">I am coding</p>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+        <li>Grapes</li>
+    </ul>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log(document.getElementById('heading').innerHTML);
+        console.log(document.getElementById('heading').innerText);
+        console.log(document.getElementById('heading').textContent);
+        // document.querySelector('.test')
+        // document.querySelector('#heading')
+        // document.querySelector('h2')
+        console.log(document.getElementById('unique').getAttribute('class'));
+        console.log(document.getElementById('unique').setAttribute('class', 'test testTWO'));
+        const myUl = document.querySelector('ul');
+        turnRed = myUl.querySelector('li');
+        turnRed.style.backgroundColor = 'red';                              // it will turn first li bg color to red
+        turnRed.style.padding = '10px';
+        console.log(turnRed.innerText);
+        console.log(turnRed.innerText = "pineapple");
+        console.log(document.querySelectorAll('li'));
+        tempList = document.querySelectorAll('li');
+        // tempList.style.color = "yellow";                 // error
+        tempList[0].style.color = "yellow"
+    });
+
+</script>
+
+</html>
