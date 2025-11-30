@@ -17,6 +17,14 @@
         <li>Orange</li>
         <li>Grapes</li>
     </ul>
+
+    <ol>
+        <li class="list-item">One</li>
+        <li class="list-item">Two</li>
+        <li class="list-item">Three</li>
+        <li class="list-item">Four</li>
+        <li class="list-item">Five</li>
+    </ol>
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -38,8 +46,25 @@
         tempList = document.querySelectorAll('li');
         // tempList.style.color = "yellow";                 // error
         tempList[0].style.color = "yellow"
+        tempList.forEach((element) => {
+            element.style.backgroundColor = "aqua"
+        });
+
+        const tempClassList = document.getElementsByClassName('list-item');
+        console.log(tempClassList);                                             // html collection
+        // to convert html collection in array
+        const myConvertedArray = Array.from(tempClassList);
+        console.log(myConvertedArray);
+
+        myConvertedArray.forEach((l) => {
+            l.style.backgroundColor = "yellow";
+            l.style.color = "pink";
+        });
     });
 
 </script>
 
 </html>
+
+<!-- We use DOMContentLoaded to ensure that JavaScript runs only after the complete HTML DOM is fully loaded,
+  so that all elements are available for manipulation. -->
