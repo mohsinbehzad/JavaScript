@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body>
+    <button id="aqua">Aqua</button>
+    <button id="black">Black</button>
+</body>
+<script>
+    // document.getElementById('aqua').onclick = function () {
+    //     document.body.style.backgroundColor = 'aqua'
+    // }
+    // document.getElementById('black').onclick = function () {
+    //     document.body.style.backgroundColor = 'black'
+    // }
+
+    function clickHandler(color) {
+        return function () {
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('aqua').onclick = clickHandler('aqua')
+    document.getElementById('black').onclick = clickHandler('black')
+</script>
+
+</html>
